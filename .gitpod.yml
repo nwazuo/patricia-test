@@ -1,3 +1,5 @@
 vscode:
   extensions:
     - vtrois.gitmoji-vscode
+    - lightyen.tailwindcss-intellisense-twin
+    - bradlc.vscode-tailwindcss

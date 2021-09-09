@@ -1,3 +1,7 @@
 {
-  "recommendations": ["vtrois.gitmoji-vscode"]
+  "recommendations": [
+    "vtrois.gitmoji-vscode",
+    "lightyen.tailwindcss-intellisense-twin",
+    "bradlc.vscode-tailwindcss"
+  ]
 }
