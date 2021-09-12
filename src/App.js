@@ -1,6 +1,6 @@
 import React from 'react';
 import tw from 'twin.macro';
-import { Header, Sidebar } from './components';
+import { Header, Layout } from './components';
 
 /* Keeping this snippet cos I'll need something like this */
 
@@ -15,7 +15,7 @@ const styles = {
 const App = () => (
   <>
     <Header />
-    <Sidebar />
+    <Layout />
   </>
 );
 

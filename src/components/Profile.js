@@ -10,7 +10,7 @@ import { ReactComponent as Notification } from '../assets/notification.svg';
 // import { css } from 'styled-components';
 
 const Profile = () => (
-  <div tw="px-4 py-2 lg:bg-gray-light flex items-center w-min rounded-lg">
+  <div tw="px-4 py-2 pr-0 lg:pr-2 lg:bg-gray-light flex items-center w-min rounded-lg">
     <div tw="mr-2 bg-white rounded-lg p-2 w-8 h-8 cursor-pointer">
       <Notification />
     </div>

@@ -141,7 +141,12 @@ const Sidebar = () => {
         >
           <nav
             id="nav"
-            tw="flex flex-col overflow-y-auto h-screen border-r border-r-gray-lighter"
+            tw="flex flex-col overflow-y-auto h-screen border-r border-r-gray-lighter lg:my-6"
+            css={`
+              @media (min-width: 1024px) {
+                height: calc(100vh - 48px);
+              }
+            `}
           >
             <div>
               <a href="/" tw="w-16 lg:w-28">

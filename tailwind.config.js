@@ -46,6 +46,9 @@ module.exports = {
         ],
         alt: ['Graphik', 'sans-serif'],
       },
+      maxWidth: () => ({
+        '8xl': '1440px',
+      }),
     },
   },
   plugins: [],
