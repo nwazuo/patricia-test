@@ -11,13 +11,13 @@ const LayeredCard = ({ children, adStyle }) => (
   // the adStyle prop here represents additional styling for the main layer that holds content
 
   <div tw="rounded-3xl pb-4 relative">
-    <div tw="z-10 lg:rounded-3xl rounded-2xl bg-gray-light bottom-0 left-6 right-6 absolute top-0"></div>
     <div
-      tw="z-20 lg:rounded-3xl rounded-2xl bottom-2 left-2 right-2 absolute top-0"
+      tw="z-10 lg:rounded-3xl rounded-2xl  bottom-0 left-6 right-6 absolute top-0"
       css={`
         background-color: #e5e9f2;
       `}
     ></div>
+    <div tw="z-20 lg:rounded-3xl rounded-2xl bottom-2 left-2 right-2 absolute top-0 bg-gray-light"></div>
     <div tw="z-30 relative h-full lg:rounded-3xl rounded-2xl" css={adStyle}>
       {children}
     </div>
