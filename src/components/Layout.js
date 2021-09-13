@@ -63,17 +63,40 @@ const Layout = ({ children }) => (
         <div id="wallet-metric" tw="mt-5 lg:mt-6">
           <LayeredCard adStyle={[`background: #006156; display: flex;`]}>
             <div
-              id="wallet-figures"
-              tw="py-4 lg:py-6 pl-10"
+              id="wallet-figures-wrapper"
               css={`
                 background-image: url(${walletPattern});
                 background-repeat: no-repeat;
-                border-right: 1px solid #388379;
               `}
+              tw="py-4 lg:py-6 pl-10"
             >
-              <p>Total Balance</p>
-              <p>₦89,153,001.73</p>
-              <p>Book Balance: ₦450,000.093</p>
+              <div
+                id="wallet-figures"
+                css={`
+                  border-right: 1px solid #388379;
+                `}
+                tw="flex flex-col pr-5 lg:pr-8"
+              >
+                <p
+                  tw="mb-3 lg:mb-4 font-semibold"
+                  css={`
+                    color: #63bdaf;
+                    font-size: 14px;
+                  `}
+                >
+                  Total Balance
+                </p>
+                <p tw="text-white text-3xl">₦89,153,001.73</p>
+                <p
+                  tw="font-semibold mt-2"
+                  css={`
+                    color: #c8e2de;
+                    font-size: 14px;
+                  `}
+                >
+                  Book Balance: ₦450,000.093
+                </p>
+              </div>
             </div>
           </LayeredCard>
         </div>
