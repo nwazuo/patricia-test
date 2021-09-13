@@ -84,7 +84,7 @@ const Layout = ({ children }) => (
         <div id="wallet-metric" tw="mt-5 lg:mt-6 mb-5 lg:mb-6">
           <LayeredCard
             adStyle={[
-              `background: #006156; display: flex; position: relative; overflow-x: scroll; -ms-overflow-style: none; scrollbar-width: none;`,
+              `background: #006156; display: flex; justify-content: space-between; position: relative; overflow-x: scroll; -ms-overflow-style: none; scrollbar-width: none;`,
               `&::-webkit-scrollbar {display: none};`,
             ]}
           >
