@@ -7,6 +7,11 @@ import '../styles/layout.css';
 import { ReactComponent as CircledChevronIcon } from '../assets/circled-chevron.svg';
 import { ReactComponent as NairaBadgeDark } from '../assets/naira-badge-dark.svg';
 import walletPattern from '../assets/wallet-pattern.svg';
+
+import rightArrowIcon from '../assets/right-arrow.svg';
+import { ReactComponent as RequestMoneyIcon } from '../assets/request-money.svg';
+import { ReactComponent as CardlessWithdrawalIcon } from '../assets/cardless-withdrawal.svg';
+
 import graph from '../assets/money-graph.svg';
 
 const LayeredCard = ({ children, adStyle }) => (
@@ -164,8 +169,37 @@ const Layout = ({ children }) => (
             </div>
           </LayeredCard>
         </div>
+        <div
+          id="card-actions"
+          css={`
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          `}
+          tw="grid gap-6"
+        >
+          <CardButton text="Request Money" icon={<RequestMoneyIcon />} />
+          <CardButton
+            text="Cardless Withdrawal"
+            icon={<CardlessWithdrawalIcon />}
+          />
+        </div>
       </div>
     </div>
+  </div>
+);
+
+const CardButton = ({ text, icon, action }) => (
+  <div
+    tw="border-gray-lighter border rounded-3xl flex items-center py-7 pr-8 pl-6 cursor-pointer"
+    className="group card-with-arrow"
+    onClick={action}
+  >
+    {icon}
+    <p tw="font-medium ml-5">{text}</p>
+    <img
+      src={rightArrowIcon}
+      tw="ml-auto group-hover:text-green"
+      className="icon-hover-dark"
+    />
   </div>
 );
 

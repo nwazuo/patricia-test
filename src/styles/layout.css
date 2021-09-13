@@ -14,3 +14,14 @@
   padding: 2px 8px;
   border-radius: 100px;
 }
+
+.card-with-arrow:hover {
+  box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+  color: #388379;
+}
+
+.card-with-arrow:hover .icon-hover-dark {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(7%) saturate(2966%)
+    hue-rotate(123deg) brightness(94%) contrast(83%);
+}
