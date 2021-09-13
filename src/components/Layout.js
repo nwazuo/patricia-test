@@ -4,6 +4,7 @@ import { Sidebar } from '../components';
 
 import { ReactComponent as CircledChevronIcon } from '../assets/circled-chevron.svg';
 import { ReactComponent as NairaBadgeDark } from '../assets/naira-badge-dark.svg';
+import walletPattern from '../assets/wallet-pattern.svg';
 
 const LayeredCard = ({ children, adStyle }) => (
   // wheew, one of those moments where using tailwind is actually stressful
@@ -59,9 +60,21 @@ const Layout = ({ children }) => (
             </div>
           </div>
         </div>
-        <div id="wallet-metric">
-          <LayeredCard adStyle={`background: #006156`}>
-            <h1>Hello World</h1>
+        <div id="wallet-metric" tw="mt-5 lg:mt-6">
+          <LayeredCard adStyle={[`background: #006156; display: flex;`]}>
+            <div
+              id="wallet-figures"
+              tw="py-4 lg:py-6 pl-10"
+              css={`
+                background-image: url(${walletPattern});
+                background-repeat: no-repeat;
+                border-right: 1px solid #388379;
+              `}
+            >
+              <p>Total Balance</p>
+              <p>₦89,153,001.73</p>
+              <p>Book Balance: ₦450,000.093</p>
+            </div>
           </LayeredCard>
         </div>
       </div>
