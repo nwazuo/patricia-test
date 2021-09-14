@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 import React from 'react';
-import { Sidebar, RecentActivity } from '../components';
+import { Sidebar, RecentActivity, FlexBreak } from '../components';
 
 import '../styles/layout.css';
 
@@ -13,6 +13,7 @@ import { ReactComponent as RequestMoneyIcon } from '../assets/request-money.svg'
 import { ReactComponent as CardlessWithdrawalIcon } from '../assets/cardless-withdrawal.svg';
 
 import graph from '../assets/money-graph.svg';
+import BankOperations from './BankOperations';
 
 const LayeredCard = ({ children, adStyle }) => (
   // wheew, one of those moments where using tailwind is actually stressful
@@ -34,6 +35,7 @@ const LayeredCard = ({ children, adStyle }) => (
 );
 
 const Layout = ({ children }) => (
+  // TODO: Refactor!!!
   <div
     tw="lg:flex max-w-8xl mx-auto"
     // gotta cater for the monstrous screens. Hmm... a layout bug somewhere making this not to work...
@@ -58,7 +60,7 @@ const Layout = ({ children }) => (
         }
       `}
     >
-      {/* I use id's here to indicate sections because I don't have time to make components out of these. */}
+      {/* I use id's here to indicate sections because I don't have time to make components out of these, yet. */}
       <div
         id="wallet"
         tw="px-4 pt-4 lg:pt-10 pb-4 lg:pb-6"
@@ -146,7 +148,7 @@ const Layout = ({ children }) => (
                 <span className="selected">Year</span>
               </div>
               <div id="graph" tw="my-3 lg:my-5">
-                {/* TODO: replace this with actual graph implementation */}
+                {/* TODO: replace this with actual graph implementation using rechartsJS line graph */}
                 <img src={graph} alt="money graph" />
               </div>
               <div
@@ -188,6 +190,8 @@ const Layout = ({ children }) => (
         </div>
         <RecentActivity />
       </div>
+      <FlexBreak />
+      <BankOperations />
     </div>
   </div>
 );
