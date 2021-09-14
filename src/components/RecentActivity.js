@@ -53,7 +53,7 @@ const RecentActivity = () => (
     id="recent-activity"
     tw="border-gray-lighter border rounded-3xl pt-6 pb-0 px-2 mt-4"
   >
-    <div tw="flex items-baseline">
+    <div tw="flex items-center sm:items-baseline">
       <h5
         tw="text-gray-medium pl-4"
         css={`
@@ -77,74 +77,77 @@ const RecentActivity = () => (
         <DownloadIcon />
       </span>
     </div>
-    <div className="recent-activity-mobile" tw="md:hidden">
+    <div className="recent-activity-mobile" tw="hidden">
       {recentActivityData.map((activity) => (
         <div></div>
       ))}
     </div>
 
-    <table
-      className="recent-activity"
-      tw="hidden md:table w-full mt-1 border-separate"
-      css={`
-        border-spacing: 0 16px;
-      `}
-    >
-      <tbody
-        tw="font-bold"
+    <div tw="overflow-x-scroll">
+      <table
+        className="recent-activity"
+        tw=" w-full mt-1 border-separate"
         css={`
-          font-size: 14px;
+          border-spacing: 0 16px;
+          min-width: 600px;
         `}
       >
-        {/* taking advantage of css inheritance to set text size for children */}
-        {recentActivityData.map((activity) => (
-          <tr
-            tw="border-transparent cursor-pointer rounded-lg"
-            css={`
-              &:hover {
-                box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.05);
-              }
-            `}
-          >
-            <td
-              tw="pl-4 py-1 pr-5"
+        <tbody
+          tw="font-bold"
+          css={`
+            font-size: 14px;
+          `}
+        >
+          {/* taking advantage of css inheritance to set text size for children */}
+          {recentActivityData.map((activity) => (
+            <tr
+              tw="border-transparent cursor-pointer rounded-lg"
               css={`
-                width: 40px;
+                &:hover {
+                  box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.05);
+                }
               `}
             >
-              <div
+              <td
+                tw="pl-4 py-1 pr-5"
                 css={`
                   width: 40px;
                 `}
               >
-                <NairaLightIcon />
-              </div>
-            </td>
-            <td tw="text-gray-dark">
-              <span>{activity.title}</span>
-            </td>
-            <td tw="text-gray-medium">
-              <span css={[activity.type == 'inflow' && tw`text-gray-dark`]}>
-                {activity.amount}
-              </span>
-            </td>
-            <td tw="text-gray-medium">
-              <span>{activity.time}</span>
-            </td>
-            <td tw="text-right pr-4">
-              <span
-                tw="capitalize"
-                css={`
-                  color: ${statusColorCodes[activity.status]};
-                `}
-              >
-                {activity.status}
-              </span>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+                <div
+                  css={`
+                    width: 40px;
+                  `}
+                >
+                  <NairaLightIcon />
+                </div>
+              </td>
+              <td tw="text-gray-dark">
+                <span>{activity.title}</span>
+              </td>
+              <td tw="text-gray-medium">
+                <span css={[activity.type == 'inflow' && tw`text-gray-dark`]}>
+                  {activity.amount}
+                </span>
+              </td>
+              <td tw="text-gray-medium">
+                <span>{activity.time}</span>
+              </td>
+              <td tw="text-right pr-4">
+                <span
+                  tw="capitalize"
+                  css={`
+                    color: ${statusColorCodes[activity.status]};
+                  `}
+                >
+                  {activity.status}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </div>
 );
 
