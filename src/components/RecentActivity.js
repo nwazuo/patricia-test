@@ -51,11 +51,11 @@ const statusColorCodes = {
 const RecentActivity = () => (
   <div
     id="recent-activity"
-    tw="border-gray-lighter border rounded-3xl pt-6 pb-0 px-2 mt-4"
+    tw="border-gray-lighter border rounded-3xl pt-4 lg:pt-6 pb-0 px-2 mt-4"
   >
     <div tw="flex items-center sm:items-baseline">
       <h5
-        tw="text-gray-medium pl-4"
+        tw="text-gray-medium pl-2 lg:pl-4"
         css={`
           font-size: 14px;
         `}
@@ -83,7 +83,13 @@ const RecentActivity = () => (
       ))}
     </div>
 
-    <div tw="overflow-x-scroll">
+    <div
+      tw="overflow-x-scroll"
+      css={
+        (`overflow-x: scroll; -ms-overflow-style: none; scrollbar-width: none;`,
+        `&::-webkit-scrollbar {display: none};`)
+      }
+    >
       <table
         className="recent-activity"
         tw=" w-full mt-1 border-separate"
@@ -109,7 +115,7 @@ const RecentActivity = () => (
               `}
             >
               <td
-                tw="pl-4 py-1 pr-5"
+                tw="pl-2 lg:pl-4 py-1 pr-5"
                 css={`
                   width: 40px;
                 `}

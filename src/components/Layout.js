@@ -61,7 +61,7 @@ const Layout = ({ children }) => (
       {/* I use id's here to indicate sections because I don't have time to make components out of these. */}
       <div
         id="wallet"
-        tw="px-4 pt-4 lg:pt-10"
+        tw="px-4 pt-4 lg:pt-10 pb-4 lg:pb-6"
         css={`
           flex-grow: 1;
 
@@ -178,7 +178,7 @@ const Layout = ({ children }) => (
           css={`
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           `}
-          tw="grid gap-6"
+          tw="grid gap-4 lg:gap-6"
         >
           <CardButton text="Request Money" icon={<RequestMoneyIcon />} />
           <CardButton
