@@ -133,6 +133,7 @@ const Sidebar = () => {
         css={[
           tw`bg-black bg-opacity-25 w-full fixed z-40 inset-0 flex h-full  lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:w-56 lg:block`,
           !drawerisOpen && tw`hidden`,
+          `@media (min-width: 1024px) {position: fixed};`,
         ]}
       >
         <div

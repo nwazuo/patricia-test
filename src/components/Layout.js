@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 import React from 'react';
-import { Sidebar } from '../components';
+import { Sidebar, RecentActivity } from '../components';
 
 import '../styles/layout.css';
 
@@ -36,7 +36,7 @@ const LayeredCard = ({ children, adStyle }) => (
 const Layout = ({ children }) => (
   <div
     tw="lg:flex max-w-8xl mx-auto"
-    // gotta cater for the monstrous screens
+    // gotta cater for the monstrous screens. Hmm... a layout bug somewhere making this not to work...
     css={`
       @media (min-width: 1440px) {
         border-left: 1px solid #eff2f7;
@@ -48,6 +48,10 @@ const Layout = ({ children }) => (
     <div
       tw="block lg:flex flex-grow "
       css={`
+        @media (min-width: 1024px) {
+          margin-left: 224px;
+        }
+
         @media (min-width: 1024px) and (max-width: 1280px) {
           justify-content: center;
           flex-wrap: wrap;
@@ -182,6 +186,7 @@ const Layout = ({ children }) => (
             icon={<CardlessWithdrawalIcon />}
           />
         </div>
+        <RecentActivity />
       </div>
     </div>
   </div>
